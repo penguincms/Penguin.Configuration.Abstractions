@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Penguin.Configuration.Abstractions</name>
+    </assembly>
+    <members>
+        <member name="T:Penguin.Configuration.Abstractions.IProvideConfigurations">
+            <summary>
+            An interface for any object that provides configuration information to the application
+            </summary>
+        </member>
+        <member name="P:Penguin.Configuration.Abstractions.IProvideConfigurations.AllConfigurations">
+            <summary>
+            Returns a dictionary of all found configurations
+            </summary>
+        </member>
+        <member name="P:Penguin.Configuration.Abstractions.IProvideConfigurations.AllConnectionStrings">
+            <summary>
+            Returns a list of all connection string values
+            </summary>
+        </member>
+        <member name="M:Penguin.Configuration.Abstractions.IProvideConfigurations.GetConfiguration(System.String)">
+            <summary>
+            Returns a single configuration value (or null)
+            </summary>
+            <param name="Key">The configuration key</param>
+            <returns>The configuration value</returns>
+        </member>
+        <member name="M:Penguin.Configuration.Abstractions.IProvideConfigurations.GetConnectionString(System.String)">
+            <summary>
+            Gets a connection string by name
+            </summary>
+            <param name="Name">The name of the connection string</param>
+            <returns>The connection string value</returns>
+        </member>
+    </members>
+</doc>
