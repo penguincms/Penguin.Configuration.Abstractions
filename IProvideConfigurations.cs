@@ -7,8 +7,6 @@ namespace Penguin.Configuration.Abstractions
     /// </summary>
     public interface IProvideConfigurations
     {
-        #region Properties
-
         /// <summary>
         /// Returns a dictionary of all found configurations
         /// </summary>
@@ -18,10 +16,6 @@ namespace Penguin.Configuration.Abstractions
         /// Returns a list of all connection string values
         /// </summary>
         Dictionary<string, string> AllConnectionStrings { get; }
-
-        #endregion Properties
-
-        #region Methods
 
         /// <summary>
         /// Returns a single configuration value (or null)
@@ -36,7 +30,5 @@ namespace Penguin.Configuration.Abstractions
         /// <param name="Name">The name of the connection string</param>
         /// <returns>The connection string value</returns>
         string GetConnectionString(string Name);
-
-        #endregion Methods
     }
 }
