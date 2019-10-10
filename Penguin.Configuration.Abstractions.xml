@@ -36,6 +36,14 @@
             <param name="Name">The name of the configuration to get</param>
             <returns>the int representation (or 0 if null)</returns>
         </member>
+        <member name="M:Penguin.Configuration.Abstractions.Extensions.IProvideConfigurationExtensions.ConnectionStringOrConfiguration(Penguin.Configuration.Abstractions.Interfaces.IProvideConfigurations,System.String)">
+            <summary>
+            Checks connection strings first, then configurations
+            </summary>
+            <param name="provider">The IConfigurationProvider</param>
+            <param name="Name">The name of the connection string/configuration</param>
+            <returns>The value, if any is found, or null</returns>
+        </member>
         <member name="M:Penguin.Configuration.Abstractions.Extensions.IProvideConfigurationExtensions.IsDebug(Penguin.Configuration.Abstractions.Interfaces.IProvideConfigurations)">
             <summary>
             Checks for the configuration "Debug" and returns its value

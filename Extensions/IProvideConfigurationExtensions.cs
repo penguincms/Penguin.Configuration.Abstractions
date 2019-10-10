@@ -7,6 +7,7 @@ using System.Globalization;
 namespace Penguin.Configuration.Abstractions.Extensions
 {
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+
     public static class IProvideConfigurationExtensions
 #pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
     {
@@ -104,6 +105,17 @@ namespace Penguin.Configuration.Abstractions.Extensions
 
             string toReturn = provider.GetConfiguration(Name);
             return toReturn == null ? 0 : int.Parse(toReturn, NumberStyles.Integer, CultureInfo.CurrentCulture);
+        }
+
+        /// <summary>
+        /// Checks connection strings first, then configurations
+        /// </summary>
+        /// <param name="provider">The IConfigurationProvider</param>
+        /// <param name="Name">The name of the connection string/configuration</param>
+        /// <returns>The value, if any is found, or null</returns>
+        public static string ConnectionStringOrConfiguration(this IProvideConfigurations provider, string Name)
+        {
+            return provider.GetConnectionString(Name) ?? provider.GetConfiguration(Name);
         }
 
         /// <summary>
