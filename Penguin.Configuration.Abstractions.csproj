@@ -6,6 +6,7 @@
     <Description>Contains interfaces required by common configuration classes</Description>
     <AssemblyName>Penguin.Configuration.Abstractions</AssemblyName>
     <RootNamespace>Penguin.Configuration.Abstractions</RootNamespace>
+    <DocumentationFile>Penguin.Configuration.Abstractions.xml</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="2.9.4">
