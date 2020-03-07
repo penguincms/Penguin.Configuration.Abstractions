@@ -8,12 +8,12 @@ namespace Penguin.Configuration.Abstractions.Exceptions
 
         public MissingConfigurationException(string configurationName, string message) : base(message)
         {
-            ConfigurationName = configurationName;
+            this.ConfigurationName = configurationName;
         }
 
         public MissingConfigurationException(string configurationName, string message, Exception innerException) : base(message, innerException)
         {
-            ConfigurationName = configurationName;
+            this.ConfigurationName = configurationName;
         }
     }
 }
