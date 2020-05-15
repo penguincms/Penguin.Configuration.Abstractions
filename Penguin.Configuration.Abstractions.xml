@@ -4,6 +4,31 @@
         <name>Penguin.Configuration.Abstractions</name>
     </assembly>
     <members>
+        <member name="T:Penguin.Configuration.Abstractions.Exceptions.MissingConfigurationException">
+            <summary>
+            An exception thrown when a configuration source is missing a required configuration
+            </summary>
+        </member>
+        <member name="P:Penguin.Configuration.Abstractions.Exceptions.MissingConfigurationException.ConfigurationName">
+            <summary>
+            The name of the configuration that was requested
+            </summary>
+        </member>
+        <member name="M:Penguin.Configuration.Abstractions.Exceptions.MissingConfigurationException.#ctor(System.String,System.String)">
+            <summary>
+            Constructs a new instance of this exception with the provided configuration name and message
+            </summary>
+            <param name="configurationName">The name of the configuration that was requested</param>
+            <param name="message">The message to return</param>
+        </member>
+        <member name="M:Penguin.Configuration.Abstractions.Exceptions.MissingConfigurationException.#ctor(System.String,System.String,System.Exception)">
+            <summary>
+            Constructs a new instance of this exception with the provided configuration name, message, and inner exception
+            </summary>
+            <param name="configurationName">The name of the configuration that was requested</param>
+            <param name="message">The message to return</param>
+            <param name="innerException">The exception to wrap</param>
+        </member>
         <member name="M:Penguin.Configuration.Abstractions.Extensions.IProvideConfigurationExtensions.FindConnectionString(Penguin.Configuration.Abstractions.Interfaces.IProvideConfigurations,System.String)">
             <summary>
             Recursively searches for a connection string by name. Allows for linking connection strings to eachother by name
@@ -51,6 +76,15 @@
             <param name="provider">The provider to use</param>
             <returns>The value of "Debug"</returns>
         </member>
+        <member name="M:Penguin.Configuration.Abstractions.Extensions.IProvideConfigurationsCollectionExtensions.SetConfiguration(Penguin.Configuration.Abstractions.Interfaces.IProvideConfigurationsCollection,System.String,System.String)">
+            <summary>
+            Searches the included providers for a writable configuration, and saves the value in the first writable provider
+            </summary>
+            <param name="collection">The configuration provider collection</param>
+            <param name="Name">The configuration name to update</param>
+            <param name="Value">The new value</param>
+            <returns>True if a writable provider was found to persist the value</returns>
+        </member>
         <member name="T:Penguin.Configuration.Abstractions.Interfaces.IProvideConfigurations">
             <summary>
             An interface for any object that provides configuration information to the application
@@ -92,6 +126,11 @@
             <param name="Name">The name of the configuration to set</param>
             <param name="Value">The value to set it to</param>
             <returns>True if succeeded</returns>
+        </member>
+        <member name="P:Penguin.Configuration.Abstractions.Interfaces.IProvideConfigurationsCollection.Providers">
+            <summary>
+            An enumerable of the underlying providers contained in this collection
+            </summary>
         </member>
     </members>
 </doc>
