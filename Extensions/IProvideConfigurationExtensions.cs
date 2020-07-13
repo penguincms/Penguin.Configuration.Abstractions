@@ -115,6 +115,11 @@ namespace Penguin.Configuration.Abstractions.Extensions
         /// <returns>The value, if any is found, or null</returns>
         public static string ConnectionStringOrConfiguration(this IProvideConfigurations provider, string Name)
         {
+            if (provider is null)
+            {
+                throw new ArgumentNullException(nameof(provider));
+            }
+
             return provider.GetConnectionString(Name) ?? provider.GetConfiguration(Name);
         }
 
