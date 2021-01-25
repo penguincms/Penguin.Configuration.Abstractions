@@ -39,6 +39,11 @@ namespace Penguin.Configuration.Abstractions.Extensions
                 ConnectionString = toTest;
             }
 
+            if (ConnectionString is null)
+            {
+                throw new Exception("Can not test for null connection string. How did we get here?");
+            }
+
             if (ConnectionString.StartsWith("name=", StringComparison.OrdinalIgnoreCase))
             {
                 ConnectionString = ConnectionString.Replace("name=", "");
