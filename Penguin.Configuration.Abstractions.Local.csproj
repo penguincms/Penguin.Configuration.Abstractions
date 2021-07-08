@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <PackageProjectUrl>https://github.com/penguincms/Penguin.Configuration.Abstractions</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/PenguinCMS/Penguin.Configuration.Abstractions</PackageProjectUrl>
     <Version>5.0.5</Version>
     <Description>Contains interfaces required by common configuration classes</Description>
     <AssemblyName>Penguin.Configuration.Abstractions</AssemblyName>
