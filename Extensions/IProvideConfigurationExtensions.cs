@@ -133,9 +133,6 @@ namespace Penguin.Configuration.Abstractions.Extensions
         /// </summary>
         /// <param name="provider">The provider to use</param>
         /// <returns>The value of "Debug"</returns>
-        public static bool IsDebug(this IProvideConfigurations provider)
-        {
-            return provider.GetBool("Debug");
-        }
+        public static bool IsDebug(this IProvideConfigurations provider) => provider.GetBool("Debug");
     }
 }
