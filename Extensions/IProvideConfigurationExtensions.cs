@@ -1,5 +1,5 @@
 ﻿using Penguin.Configuration.Abstractions.Interfaces;
-using Penguin.Extensions.Strings;
+using Penguin.Extensions.String;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -133,6 +133,9 @@ namespace Penguin.Configuration.Abstractions.Extensions
         /// </summary>
         /// <param name="provider">The provider to use</param>
         /// <returns>The value of "Debug"</returns>
-        public static bool IsDebug(this IProvideConfigurations provider) => provider.GetBool("Debug");
+        public static bool IsDebug(this IProvideConfigurations provider)
+        {
+            return provider.GetBool("Debug");
+        }
     }
 }
