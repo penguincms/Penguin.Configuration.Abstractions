@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;netstandard2.1;net5.0</TargetFrameworks>
-    <PackageProjectUrl>https://github.com/PenguinCms/Penguin.Configuration.Abstractions</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/PenguinCMS/Penguin.Configuration.Abstractions</PackageProjectUrl>
     <Version>5.0.5</Version>
     <Description>Contains interfaces required by common configuration classes</Description>
     <AssemblyName>Penguin.Configuration.Abstractions</AssemblyName>
@@ -13,7 +13,7 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Penguin.Extensions.String" Version="5.0.6-TAX9354" />
+    <PackageReference Include="Penguin.Extensions.String" Version="5.0.6-TAZCES9" />
   </ItemGroup>
   <Import Project="Penguin.Projects.Shared\Penguin.Projects.Shared.csproj" />
 </Project>
