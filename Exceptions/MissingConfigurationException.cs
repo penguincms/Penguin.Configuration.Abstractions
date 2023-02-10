@@ -19,7 +19,7 @@ namespace Penguin.Configuration.Abstractions.Exceptions
         /// <param name="message">The message to return</param>
         public MissingConfigurationException(string configurationName, string message) : base(message)
         {
-            this.ConfigurationName = configurationName;
+            ConfigurationName = configurationName;
         }
 
         /// <summary>
@@ -30,7 +30,7 @@ namespace Penguin.Configuration.Abstractions.Exceptions
         /// <param name="innerException">The exception to wrap</param>
         public MissingConfigurationException(string configurationName, string message, Exception innerException) : base(message, innerException)
         {
-            this.ConfigurationName = configurationName;
+            ConfigurationName = configurationName;
         }
 
         internal MissingConfigurationException()

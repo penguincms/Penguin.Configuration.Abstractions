@@ -24,21 +24,11 @@ namespace Penguin.Configuration.Abstractions.Extensions
                 throw new ArgumentNullException(nameof(provider));
             }
 
-            string ConnectionString;
-
-            if (provider.GetConnectionString(toTest) != null)
-            {
-                ConnectionString = provider.GetConnectionString(toTest);
-            }
-            else if (!string.IsNullOrWhiteSpace(provider.GetConfiguration(toTest)))
-            {
-                ConnectionString = provider.FindConnectionString(provider.GetConfiguration(toTest));
-            }
-            else
-            {
-                ConnectionString = toTest;
-            }
-
+            string ConnectionString = provider.GetConnectionString(toTest) != null
+                ? provider.GetConnectionString(toTest)
+                : !string.IsNullOrWhiteSpace(provider.GetConfiguration(toTest))
+                    ? provider.FindConnectionString(provider.GetConfiguration(toTest))
+                    : toTest;
             if (ConnectionString is null)
             {
                 throw new Exception("Can not test for null connection string. How did we get here?");
@@ -85,14 +75,7 @@ namespace Penguin.Configuration.Abstractions.Extensions
 
             string v = provider.GetConfiguration(key);
 
-            if (v is null)
-            {
-                return null;
-            }
-            else
-            {
-                return v.ToDictionary();
-            }
+            return v?.ToDictionary();
         }
 
         /// <summary>
@@ -120,12 +103,9 @@ namespace Penguin.Configuration.Abstractions.Extensions
         /// <returns>The value, if any is found, or null</returns>
         public static string ConnectionStringOrConfiguration(this IProvideConfigurations provider, string Name)
         {
-            if (provider is null)
-            {
-                throw new ArgumentNullException(nameof(provider));
-            }
-
-            return provider.GetConnectionString(Name) ?? provider.GetConfiguration(Name);
+            return provider is null
+                ? throw new ArgumentNullException(nameof(provider))
+                : provider.GetConnectionString(Name) ?? provider.GetConfiguration(Name);
         }
 
         /// <summary>
